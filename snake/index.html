@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: pink;
+            font-size: 50px;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app"></div>
+    <span>得分0</span>
+    <!-- <script src="./js/game.js"></script>
+    <script src="./js/map.js"></script>
+    <script src="./js/food.js"></script>
+    <script src="./js/block.js"></script>
+    <script src="./js/snake.js"></script> -->
+    <script src="./js/game.js"></script>
+    <script src="./js/map.js"></script>
+    <script src="./js/food.js"></script>
+    <script src="./js/block.js"></script>
+    <script src="./js/snake.js"></script>
+
+    <script>
+        var con = document.querySelector('.app');
+        // 地图
+        var map = new Maps(600, 600, 20, 20, con);
+
+        // 食物
+        var food = new Food(2, 6, './img/food.jpg');
+        //障碍物
+        var block = new Block('./img/block.png');
+        // 贪吃蛇
+        var snake = new Snake(
+            ['./img/1.png', './img/2.png', './img/3.png', './img/4.png'],
+            './img/5.png', ['./img/8.png', './img/9.png', './img/6.png', './img/7.png']
+        );
+        //游戏
+        var span = document.querySelector('span');
+        var game = new Game(map, food, block, snake, span);
+
+
+        game.intl();
+    </script>
+
+</body>
+
+</html>

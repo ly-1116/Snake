@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: pink;
+            font-size: 50px;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app"></div>
+    <span>得分0</span>
+    <!-- <script src="./js/game.js"></script>
+    <script src="./js/map.js"></script>
+    <script src="./js/food.js"></script>
+    <script src="./js/block.js"></script>
+    <script src="./js/snake.js"></script> -->
+    <script src="./jscopy/game.js"></script>
+    <script src="./jscopy/map.js"></script>
+    <script src="./jscopy/food.js"></script>
+    <script src="./jscopy/block.js"></script>
+    <script src="./jscopy/snake.js"></script>
+
+    <script>
+        var con = document.querySelector('.app');
+        // 地图
+        var map = new Maps(600, 600, 30, 30, con);
+
+        // 食物
+        var food = new Food(2, 6);
+        //障碍物
+        var block = new Block();
+        // 贪吃蛇
+        var snake = new Snake();
+
+        //游戏
+        var span = document.querySelector('span');
+        var game = new Game(map, food, block, snake, span);
+
+
+        game.intl();
+    </script>
+
+</body>
+
+</html>
